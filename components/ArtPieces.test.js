@@ -10,7 +10,15 @@ test("Renders Art Pieces Correctly", () => {
       name: "Orange Red and Green Abstract Painting",
       artist: "Steve Johnson",
     },
+    {
+      slug: "blue-and-red",
+      artist: "Jung-Hua Lui",
+      name: "Blue and Red",
+      imageSource:
+        "https://example-apis.vercel.app/assets/art/blue-and-red.jpg",
+    },
   ];
+
   render(<ArtPieces pieces={mockPieces} />);
 
   mockPieces.forEach((piece) => {
