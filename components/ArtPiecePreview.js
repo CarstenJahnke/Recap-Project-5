@@ -1,9 +1,11 @@
 export default function ArtPiecePreview({ imageSource, name, artist }) {
   return (
-    <figure>
-      <img src={imageSource} alt={name}></img>
-      <figcaption>{name}</figcaption>
-      <figcaption>{artist}</figcaption>
-    </figure>
+    <div>
+      <img src={imageSource} alt={name} style={{ width: "50%" }} />
+      <div style={{ padding: "2px" }}>
+        <h4>{name}</h4>
+        <h4>{artist}</h4>
+      </div>
+    </div>
   );
 }
