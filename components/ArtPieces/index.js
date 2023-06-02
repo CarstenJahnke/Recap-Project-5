@@ -1,6 +1,6 @@
-import ArtPiecePreview from "./ArtPiecePreview";
+import ArtPiecePreview from "../ArtPiecesPreview";
 
-export default function ArtPieces({ pieces }) {
+export function ArtPieces({ pieces }) {
   return (
     <div>
       {pieces.map((piece) => (
