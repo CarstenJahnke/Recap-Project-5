@@ -1,8 +1,8 @@
 import { render, screen } from "@testing-library/react";
-import ArtPiecePreview from "./ArtPiecePreview";
+import ArtPieces from ".";
 
-test("Renders Art Pieces Preview Correctly", () => {
-  const mockPiece = [
+test("Renders Art Pieces Correctly", () => {
+  const mockPieces = [
     {
       slug: "orange-red-and-green",
       imageSource:
@@ -10,14 +10,19 @@ test("Renders Art Pieces Preview Correctly", () => {
       name: "Orange Red and Green Abstract Painting",
       artist: "Steve Johnson",
     },
+    {
+      slug: "blue-and-red",
+      artist: "Jung-Hua Lui",
+      name: "Blue and Red",
+      imageSource:
+        "https://example-apis.vercel.app/assets/art/blue-and-red.jpg",
+    },
   ];
 
-  render(<ArtPiecePreview {...mockPiece[0]} />);
+  render(<ArtPieces pieces={mockPieces} />);
 
-  mockPiece.forEach((piece) => {
-    expect(screen.getByRole("img")).toHaveAttribute("src", piece.imageSource);
-    expect(screen.getByRole("img")).toHaveAttribute("alt", piece.name);
-
+  mockPieces.forEach((piece) => {
+    expect(screen.getByAltText(piece.name)).toBeInTheDocument();
     expect(screen.getByText(piece.name)).toBeInTheDocument();
     expect(screen.getByText(piece.artist)).toBeInTheDocument();
   });
