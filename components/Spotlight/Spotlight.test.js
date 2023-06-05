@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import Spotlight from "./Spotlight";
+import Spotlight from ".";
 
 test("Renders Art Pieces Preview Correctly", () => {
   const mockPiece = {

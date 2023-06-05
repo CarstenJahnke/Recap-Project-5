@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import ArtPieces from "./ArtPieces";
+import ArtPieces from ".";
 
 test("Renders Art Pieces Correctly", () => {
   const mockPieces = [
