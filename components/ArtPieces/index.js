@@ -1,11 +1,16 @@
 import ArtPiecePreview from "../ArtPiecesPreview";
+import styled from "styled-components";
 
 export function ArtPieces({ pieces }) {
   return (
-    <div>
+    <StyledDiv>
       {pieces.map((piece) => (
         <ArtPiecePreview key={piece.slug} {...piece} />
       ))}
-    </div>
+    </StyledDiv>
   );
 }
+
+const StyledDiv = styled.div`
+  text-align: center;
+`;
