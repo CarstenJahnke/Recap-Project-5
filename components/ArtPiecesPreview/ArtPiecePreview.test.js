@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import ArtPiecePreview from ".";
+import ArtPiecePreview from "./index";
 
 test("Renders Art Pieces Preview Correctly", () => {
   const mockPiece = [
@@ -18,7 +18,6 @@ test("Renders Art Pieces Preview Correctly", () => {
     expect(screen.getByRole("img")).toHaveAttribute("src", piece.imageSource);
     expect(screen.getByRole("img")).toHaveAttribute("alt", piece.name);
 
-    expect(screen.getByText(piece.name)).toBeInTheDocument();
-    expect(screen.getByText(piece.artist)).toBeInTheDocument();
+    expect(screen.getByText(`${piece.name} by ${piece.artist}`)).toBeInTheDocument();
   });
 });
